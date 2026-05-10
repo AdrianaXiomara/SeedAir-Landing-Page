@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <!-- Font Awesome-Íconos de redes sociales -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+    <!-- Hoja de estilos propia -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Configuración de Tailwind -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#007439",
+                        "inverse-primary": "#b4c5ff",
+                        "outline-variant": "#c3c6d7",
+                        "surface-container-highest": "#e0e3e5",
+                        "error": "#ba1a1a",
+                        "background": "#f7f9fb",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#f2f4f6",
+                        "on-secondary-fixed-variant": "#005227",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#4de082",
+                        "tertiary-fixed-dim": "#bec6e0",
+                        "outline": "#737686",
+                        "on-surface": "#191c1e",
+                        "tertiary": "#4d556b",
+                        "surface-dim": "#d8dadc",
+                        "surface-variant": "#e0e3e5",
+                        "on-tertiary-fixed-variant": "#3f465c",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#dbe1ff",
+                        "primary-container": "#2563eb",
+                        "inverse-surface": "#2d3133",
+                        "on-primary-container": "#eeefff",
+                        "surface-container-high": "#e6e8ea",
+                        "on-surface-variant": "#434655",
+                        "inverse-on-surface": "#eff1f3",
+                        "secondary-container": "#6dfe9c",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#00210c",
+                        "secondary-fixed": "#6dfe9c",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#dae2fd",
+                        "surface-container": "#eceef0",
+                        "on-background": "#191c1e",
+                        "surface": "#f7f9fb",
+                        "on-tertiary-container": "#eef0ff",
+                        "tertiary-container": "#656d84",
+                        "surface-bright": "#f7f9fb",
+                        "error-container": "#ffdad6",
+                        "secondary": "#006d36",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed": "#131b2e",
+                        "primary": "#004ac6",
+                        "surface-tint": "#0053db",
+                        "on-primary-fixed": "#00174b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Montserrat"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Montserrat"],
+                        "display": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "button": ["Inter"],
+                        "headline-lg": ["Montserrat"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["28px", { "lineHeight": "34px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "button": ["16px", { "lineHeight": "16px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "label-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }]
+                    }
+                },
+            },
+        }
+    </script>
+
+    <title>SeedAir - Tecnología de Drones para el Agro</title>
+</head>
+
+<body class="bg-background text-on-background font-body-md">
+
+    <nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant">
+        <div class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-4">
+
+            <!-- Logo -->
+            <div class="flex items-center gap-3">
+                <img alt="SeedAir Logo" class="h-10 w-auto"
+                    src="imagenes/logo.png" />
+                <span class="text-headline-md font-display font-bold text-primary">SeedAir</span>
+            </div>
+
+            <!-- Links de navegación (desktop) -->
+            <div class="hidden md:flex items-center gap-8">
+                <a class="text-primary font-bold border-b-2 border-primary font-button text-button" href="#">Inicio</a>
+                <a class="text-on-surface-variant font-medium hover:text-primary transition-colors font-button text-button" href="#servicios">Servicios</a>
+                <a class="text-on-surface-variant font-medium hover:text-primary transition-colors font-button text-button" href="#">Reservas</a>
+                <a class="text-on-surface-variant font-medium hover:text-primary transition-colors font-button text-button" href="#">Sobre nosotros</a>
+                <a class="text-on-surface-variant font-medium hover:text-primary transition-colors font-button text-button" href="#contacto">Contacto</a>
+            </div>
+
+            <!-- CTA button -->
+            <button class="bg-primary text-on-primary px-6 py-3 rounded-lg font-button text-button scale-95 active:opacity-80 transition-all">
+                Reserva tu Dron Ahora
+            </button>
+
+        </div>
+    </nav>
+
+    <main class="pt-24">
+
+        <section class="relative min-h-[80vh] flex items-center px-margin-mobile md:px-margin-desktop overflow-hidden">
+
+            <!-- Imagen de fondo -->
+            <div class="absolute inset-0 z-0">
+                <img class="w-full h-full object-cover opacity-20"
+                    src="imagenes/hero-bg.jpg"
+                    alt="Campo agrícola visto desde el aire" />
+            </div>
+
+            <!-- Contenido del hero -->
+            <div class="max-w-container-max mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-gutter items-center relative z-10">
+
+                <div class="flex flex-col gap-6">
+                    <h1 class="font-display text-display text-on-surface leading-tight">
+                        Optimiza tu Agricultura con <span class="text-primary">Tecnología de Drones</span>
+                    </h1>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                        Accede a drones avanzados para siembra y fumigación sin inversión inicial. Precisión aeroespacial para la agricultura regenerativa.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <button class="bg-primary text-on-primary px-8 py-4 rounded-xl font-button text-button shadow-lg hover:brightness-110 transition-all">
+                            Reserva tu Dron Ahora
+                        </button>
+                        <button class="bg-surface-container-low border border-outline-variant text-on-surface-variant px-8 py-4 rounded-xl font-button text-button hover:bg-surface-container-high transition-all">
+                            Saber Más
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Imagen circular del dron -->
+                <div class="hidden md:flex justify-center">
+                    <div class="relative w-full max-w-md aspect-square bg-surface-container-high rounded-full overflow-hidden border-8 border-surface-container-lowest shadow-2xl">
+                        <img class="w-full h-full object-cover"
+                            src="imagenes/dron-hero.png"
+                            alt="Dron agrícola de precisión" />
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section class="py-24 px-margin-mobile md:px-margin-desktop bg-surface-container-lowest" id="servicios">
+            <div class="max-w-container-max mx-auto">
+
+                <div class="flex flex-col items-center mb-16 text-center">
+                    <h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Servicios de Precisión Aérea</h2>
+                    <div class="w-24 h-1 bg-secondary rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+
+                    <!-- Tarjeta: Plantación con Drones -->
+                    <div class="bg-surface-container-low border border-outline-variant rounded-xl overflow-hidden hover:shadow-xl transition-all group">
+                        <div class="aspect-video overflow-hidden">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                src="imagenes/imgsiembra.jpg"
+                                alt="Vista aérea de siembra de precisión" />
+                        </div>
+                        <div class="p-8">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="font-headline-md text-headline-md text-on-surface">Plantación con Drones</h3>
+                                <span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-sm font-label-sm">Alta Precisión</span>
+                            </div>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                                Optimización de la densidad de siembra mediante mapas de prescripción. Nuestra tecnología permite una distribución exacta de semillas, reduciendo el desperdicio y maximizando el rendimiento por hectárea.
+                            </p>
+                            <button class="bg-secondary text-on-secondary w-full py-4 rounded-lg font-button text-button hover:bg-on-secondary-container transition-colors">
+                                Solicitar
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta: Fumigación con Drones -->
+                    <div class="bg-surface-container-low border border-outline-variant rounded-xl overflow-hidden hover:shadow-xl transition-all group">
+                        <div class="aspect-video overflow-hidden">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                src="imagenes/imgfumigacion.jpg"
+                                alt="Fumigación de precisión con dron" />
+                        </div>
+                        <div class="p-8">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="font-headline-md text-headline-md text-on-surface">Fumigación con Drones</h3>
+                                <span class="bg-primary-fixed text-on-primary-fixed-variant px-3 py-1 rounded-full text-label-sm font-label-sm">Eco-Sostenible</span>
+                            </div>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                                Aplicación dirigida de insumos con tecnología de ultra bajo volumen. Reduce el uso de químicos hasta en un 30% gracias a la precisión quirúrgica del GPS y sensores de flujo inteligentes.
+                            </p>
+                            <button class="bg-secondary text-on-secondary w-full py-4 rounded-lg font-button text-button hover:bg-on-secondary-container transition-colors">
+                                Solicitar
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 px-margin-mobile md:px-margin-desktop bg-surface-container">
+            <div class="max-w-container-max mx-auto">
+
+                <h2 class="font-headline-lg text-headline-lg text-on-surface text-center mb-16">Lo que dicen nuestros clientes</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+
+                    <!-- Testimonio 1 -->
+                    <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant shadow-sm relative">
+                        <span class="material-symbols-outlined text-primary text-4xl mb-4">format_quote</span>
+                        <p class="font-body-md text-body-md text-on-surface italic mb-6">
+                            "La precisión en la siembra ha cambiado radicalmente nuestra producción anual. SeedAir es el aliado que necesitábamos."
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-cover" style="background-image: url('imagenes/testimonio1.jpg');"></div>
+                            <div>
+                                <p class="font-button text-button text-on-surface">Ricardo Mendoza</p>
+                                <p class="text-label-sm font-label-sm text-on-surface-variant">Productor de Maíz</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonio 2 -->
+                    <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant shadow-sm relative">
+                        <span class="material-symbols-outlined text-primary text-4xl mb-4">format_quote</span>
+                        <p class="font-body-md text-body-md text-on-surface italic mb-6">
+                            "Reducir los químicos en un 30% no solo es bueno para el planeta, sino para mis costos operativos. Excelente servicio."
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-cover" style="background-image: url('imagenes/testimonio2.jpg');"></div>
+                            <div>
+                                <p class="font-button text-button text-on-surface">Elena García</p>
+                                <p class="text-label-sm font-label-sm text-on-surface-variant">Ingeniera Agrónoma</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonio 3 -->
+                    <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant shadow-sm relative">
+                        <span class="material-symbols-outlined text-primary text-4xl mb-4">format_quote</span>
+                        <p class="font-body-md text-body-md text-on-surface italic mb-6">
+                            "La facilidad de rentar drones de última generación sin la inversión de capital inicial es una ventaja competitiva enorme."
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-cover" style="background-image: url('imagenes/testimonio3.jpg');"></div>
+                            <div>
+                                <p class="font-button text-button text-on-surface">Juan Pérez</p>
+                                <p class="text-label-sm font-label-sm text-on-surface-variant">Gerente Agrícola</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 px-margin-mobile md:px-margin-desktop bg-surface-container-lowest" id="contacto">
+            <div class="max-w-4xl mx-auto">
+
+                <div class="text-center mb-12">
+                    <h2 class="font-headline-lg text-headline-lg text-on-surface">¿Listo para optimizar tu cultivo?</h2>
+                    <p class="font-body-md text-body-md text-on-surface-variant mt-2">Déjanos tus datos y un especialista te contactará en menos de 24 horas.</p>
+                </div>
+
+                <form class="bg-surface p-8 md:p-12 rounded-2xl border border-outline-variant shadow-lg flex flex-col gap-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="flex flex-col gap-2">
+                            <label class="font-label-sm text-label-sm text-on-surface-variant" for="nombre">Nombre</label>
+                            <input class="w-full px-4 py-3 rounded-lg border border-outline outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all bg-surface-container-lowest"
+                                id="nombre" type="text" />
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="font-label-sm text-label-sm text-on-surface-variant" for="email">Correo electrónico</label>
+                            <input class="w-full px-4 py-3 rounded-lg border border-outline outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all bg-surface-container-lowest"
+                                id="email" type="email" />
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label class="font-label-sm text-label-sm text-on-surface-variant" for="mensaje">Mensaje</label>
+                        <textarea class="w-full px-4 py-3 rounded-lg border border-outline outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all bg-surface-container-lowest"
+                            id="mensaje" rows="4"></textarea>
+                    </div>
+                    <button class="bg-primary text-on-primary w-full py-4 rounded-xl font-button text-button shadow-md hover:brightness-110 transition-all mt-4"
+                        type="submit">
+                        Enviar solicitud
+                    </button>
+                </form>
+
+            </div>
+        </section>
+
+        <section class="py-20 px-margin-mobile md:px-margin-desktop">
+            <div class="max-w-container-max mx-auto bg-primary rounded-3xl p-12 text-center text-on-primary relative overflow-hidden">
+
+                <!-- Fondo decorativo -->
+                <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+                    <img class="w-full h-full object-cover"
+                        src="imagenes/cta-fondo.jpg"
+                        alt="Patrón aéreo agrícola decorativo" />
+                </div>
+
+                <div class="relative z-10 flex flex-col items-center gap-6">
+                    <h2 class="font-display text-headline-lg md:text-display">¡Reserva tu Dron Ahora!</h2>
+                    <p class="font-body-lg text-body-lg max-w-2xl text-on-primary-container">
+                        Únete a la vanguardia de la agricultura inteligente. Alquiler flexible, resultados garantizados.
+                    </p>
+                    <button class="bg-surface-container-lowest text-primary px-12 py-4 rounded-xl font-button text-button shadow-xl hover:scale-105 active:scale-95 transition-all">
+                        Reserva Ahora
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-inverse-surface py-12 px-margin-mobile md:px-margin-desktop border-t border-outline text-surface-variant">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter max-w-container-max mx-auto">
+
+            <!-- Columna: Marca -->
+            <div class="flex flex-col gap-4 justify-center">
+                <div class="flex items-center gap-2">
+                    <img alt="SeedAir Logo" class="h-8 w-auto brightness-200"
+                        src="imagenes/logo.png" />
+                    <span class="text-headline-sm font-display font-bold text-primary-fixed">SeedAir</span>
+                </div>
+                <p class="font-body-md text-body-md max-w-xs opacity-80">
+                    Precisión aeroespacial para la agricultura regenerativa. Transformando el campo con tecnología de punta.
+                </p>
+                <p class="text-label-sm font-label-sm mt-4">© 2024 SeedAir. Todos los derechos reservados.</p>
+            </div>
+
+            <!-- Columna: Contacto -->
+            <div class="flex flex-col gap-4 justify-center text-center">
+                <h4 class="font-button text-button text-on-tertiary-container">Contacto</h4>
+                <ul class="flex flex-col gap-2 font-label-sm text-label-sm">
+                    <li><a class="hover:text-secondary-fixed transition-colors" href="mailto:contacto@seedair.com">Email: contacto@seedair.com</a></li>
+                    <li><a class="hover:text-secondary-fixed transition-colors" href="tel:+51998222383">Tel: +51 998 222 383</a></li>
+                    <li><p>Dirección: Av. Javier Prado Este 123, San Isidro, Lima, Perú</p></li>
+                </ul>
+            </div>
+
+            <!-- Columna: Redes sociales -->
+            <div class="flex flex-col gap-4 justify-center text-center">
+                <h4 class="font-button text-button text-on-tertiary-container">Síguenos</h4>
+                <ul class="flex flex-col gap-3 font-label-sm text-label-sm items-center">
+                    <li>
+                        <a class="hover:text-secondary-fixed transition-colors opacity-80 hover:opacity-100 flex items-center gap-2 justify-center" href="https://www.tiktok.com/login">
+                            <i class="fab fa-tiktok text-xl"></i> TikTok
+                        </a>
+                    </li>
+                    <li>
+                        <a class="hover:text-secondary-fixed transition-colors opacity-80 hover:opacity-100 flex items-center gap-2 justify-center" href="https://www.instagram.com/accounts/login/">
+                            <i class="fab fa-instagram text-xl"></i> Instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a class="hover:text-secondary-fixed transition-colors opacity-80 hover:opacity-100 flex items-center gap-2 justify-center" href="https://www.facebook.com/login/">
+                            <i class="fab fa-facebook text-xl"></i> Facebook
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
